@@ -6,7 +6,7 @@ h = 6.626e-34
 c = 2.99e+8
 k = 1.38e-23
 
-#Planck function
+#Planck function in terms of frequency (nu)
 def Bnu(nu,t0):
     a0 = 2.0*h/(c**2)
     b0 = h*nu/(k*t0)
@@ -18,8 +18,8 @@ fig1 = plt.figure(figsize=(10,10))
 #fmt = FormatStrFormatter('%.3f')
 major_ticks = np.arange(0,3000,400)
 minor_ticks = np.arange(0,3000,100)
-#major_ticks2 = np.arange(0,20,2)
-#minor_ticks2 = np.arange(0,20,1)
+major_ticks2 = np.arange(0,20,2)
+minor_ticks2 = np.arange(0,20,1)
 
 #Temperatures of Blackbodies
 t1 = 4000
@@ -36,8 +36,8 @@ ax.tick_params(which='major',direction='in',top=True,right=True,width=2,length=1
 ax.tick_params(which='minor',direction='in',top=True,right=True,width=1,length=5,labelsize=18)
 ax.set_xticks(major_ticks)
 ax.set_xticks(minor_ticks, minor=True)
-#ax.set_yticks(major_ticks2)
-#ax.set_yticks(minor_ticks2, minor=True)
+ax.set_yticks(major_ticks2)
+ax.set_yticks(minor_ticks2, minor=True)
 plt.xlabel('$\\nu$ [THz]',fontsize=25)
 plt.ylabel('B$_{\\nu}$ [10$^{4}$ W m$^{-2}$ sr$^{-1}$ THz$^{-1}$]',fontsize=25)
 plt.xlim(0,3000)
